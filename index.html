@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Calendar App</title>
+    <title>Oasis Calender</title>
     <style>
         :root {
             --bg: #ffffff;
             --text: #000000;
-            --accent: #ff0000;
+            --accent: #0fa9c1;
             --panel-bg: rgba(255, 255, 255, 0.85);
         }
 
         [data-theme="dark"] {
             --bg: #121212;
             --text: #ffffff;
-            --accent: #ff4c4c;
+            --accent: #757575;
             --panel-bg: rgba(0, 0, 0, 0.6);
         }
 
@@ -39,16 +39,17 @@
             gap: 30px;
             width: 100%;
             max-width: 1400px;
+            border-radius: 20%;
         }
 
         .calendar {
             flex: 1 1 850px;
             min-width: 350px;
             height: 700px;
-            border: 1px solid #ccc;
+            border: 2px solid #ffffff;
             border-radius: 10px;
-            background-color: var(--panel-bg);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0);
+            box-shadow: 0 0 15px rgb(255, 255, 255);
             overflow: hidden;
             transition: transform 0.3s ease-in-out;
         }
@@ -58,7 +59,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: var(--accent);
-            color: white;
+            color: rgb(0, 0, 0);
             padding: 15px 20px;
         }
 
@@ -71,6 +72,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: 0.2s ease;
+            border-color: 1px black;
         }
 
         .calendar-header button:hover {
@@ -87,35 +89,40 @@
         }
 
         .calendar-days {
-            background-color: #f1f1f1;
+            background-color: #f1f1f14a;
             font-weight: bold;
             text-align: center;
             padding: 10px 0;
+            color: #ffffff;
         }
 
         .calendar-dates div {
             padding: 18px;
-            border: 1px solid #000;
+            color: #ffffff;
+            border: 2px solid #ffffff;
             text-align: center;
             cursor: pointer;
             transition: transform 0.2s, background-color 0.3s, color 0.3s;
             height: 60px;
             border-radius: 20%;
             transition: 0.2s ease;
+            margin-left: 3px;
         }
 
         .calendar-dates div:hover {
             padding: 25px;
-            background-color: #ff9595;
-            color: rgb(0, 0, 0);
+            background-color: #00e1ff7b;
+            color: rgb(255, 255, 255);
             transform: scale(1.0);
             border-radius: 20%;
             transition: 0.2s ease;
         }
 
         .today {
-            background-color: #d0e8ff;
+            background-color: #00a6ff;
             border-radius: 20%;
+            color: #000000;
+            text-decoration: dotted;
         }
 
         .selected {
@@ -128,8 +135,8 @@
             flex: 1 1 300px;
             background-color: var(--panel-bg);
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            box-shadow: 0 0 15px rgb(255, 255, 255);
         }
 
         .side-panel input,
@@ -138,7 +145,7 @@
             margin: 10px 0;
             padding: 8px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 5px solid #ffffffcd;
             font-size: 16px;
         }
 
@@ -146,6 +153,7 @@
             font-size: 50px;
             font-weight: bold;
             text-align: center;
+            background-color: #ffffff00;
         }
 
         .theme-toggle {
